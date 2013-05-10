@@ -30,13 +30,13 @@ tornado-cn-auth
 
 `authorize_redirect`跳转到百度授权界面(`redirect_uri`必须在应用安全设置中授权，且必须完全一致，差个/都不行)：
 
-![baidu_auth](http://s1345.photobucket.com/user/zhangyangyu/media/baidu_auth_zps68d9a401.png.html?sort=3&o=3)
+![baidu_auth](http://i1345.photobucket.com/albums/p671/zhangyangyu/baidu_auth_zps68d9a401.png)
 
 `get_authenticated_user`获取用以API调用的`access_token`,并且用`baidu_request`获取了部分
 用户信息。该方法以字典形式返回`access_token`, `session_expires`, `uid`, `uname`, `portrait`，
 其中`portrait`已经是绝对路径，而不是百度返回的item序列号：
 
-![baidu_redirect](http://s1345.photobucket.com/user/zhangyangyu/media/baidu_redirect_zpsfb3ec87b.png.html?sort=3&o=2)
+![baidu_redirect](http://i1345.photobucket.com/albums/p671/zhangyangyu/baidu_redirect_zpsfb3ec87b.png)
 
 `baidu_request`用来调用百度API，应输入 *https://openapi.baidu.com* 之后的相对路径，API列表参见相关文档。
 
@@ -52,12 +52,12 @@ tornado-cn-auth
 
 `authorize_redirect`跳转到人人授权界面(`redirect_uri`必须在应用安全设置中授权):
 
-![renren_auth](http://s1345.photobucket.com/user/zhangyangyu/media/renren_auth_zpsc8d4f7a4.png.html?sort=3&o=1)
+![renren_auth](http://i1345.photobucket.com/albums/p671/zhangyangyu/renren_auth_zpsc8d4f7a4.png)
 
 `get_authenticated_user`获取`access_token`,并以字典形式返回`access_token`, `session_expires`, `uid`,
 `name`, `headurl`：
 
-![renren_redirect](http://s1345.photobucket.com/user/zhangyangyu/media/renren_redirect_zpsd4686cc5.png.html?sort=3&o=0)
+![renren_redirect](http://i1345.photobucket.com/albums/p671/zhangyangyu/renren_redirect_zpsd4686cc5.png)
 
 `renren_request`用来调用人人API，人人API只能以POST方法调用，应传入`method`参数指定具体API类型，API列表见相关文档
 
