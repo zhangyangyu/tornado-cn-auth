@@ -102,7 +102,7 @@ tornado-cn-auth
 `get_authenticated_user`获取`access_token`和`openid`，若想调用腾讯API，则必须先通过`access_token`获取`openid`。
 该方法以字典形式返回`openid`, `figureurl`, `nickname`, `access_token`, `session_expires`：
 
-![qq_redirect](http://i1345.photobucket.com/albums/p671/zhangyangyu/qq_redirect_zps5b94793e.png)
+![qq_redirect](http://i1345.photobucket.com/albums/p671/zhangyangyu/ee4ec53b-91db-4ddc-ac05-cced3d88e7ac_zps1423dda4.jpg)
 
 `qq_request`用来调用腾讯API， 应传入 *https://graph.qq.com* 后的相对路径。需要的参数有`access_token`, `openid`,
 `client_id`。
