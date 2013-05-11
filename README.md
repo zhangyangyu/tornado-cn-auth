@@ -6,10 +6,11 @@ tornado-cn-auth
 介绍
 ===
 
-提供类似于`tornado.auth`模块的接口以供接入中国主流网站
+提供尽可能类似于`tornado.auth`模块的接口以供接入中国主流网站
 
 每个网站都提供了`authorize_redirect`和`get_authenticated_user`以及相应的request方法,
-每个网站`get_authenticated_user`默认都返回用户id,用户名和用户头像。
+每个网站`get_authenticated_user`默认都返回用户id,用户名和用户头像(返回并不一致，直接用网站
+返回的参数名)。
 
 相关模块内容可参见[tornado.auth文档](http://www.tornadoweb.org/en/stable/auth.html)
 
