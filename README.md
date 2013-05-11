@@ -59,7 +59,7 @@ tornado-cn-auth
 
 ![renren_redirect](http://i1345.photobucket.com/albums/p671/zhangyangyu/renren_redirect_zpsd4686cc5.png)
 
-`renren_request`用来调用人人API，人人API只能以POST方法调用，应传入`method`参数指定具体API类型，API列表见相关文档
+`renren_request`用来调用人人API，人人API只能以POST方法调用，应传入`method`参数指定具体API类型，API列表见相关文档。
 
 相关文档
 -------
@@ -67,6 +67,28 @@ tornado-cn-auth
 [OAuth授权](http://wiki.dev.renren.com/wiki/Authentication)
 
 [API列表](http://wiki.dev.renren.com/wiki/API)
+
+新浪微博
+=======
+
+`authorize_redirect`跳转到微博授权界面(`redirect_uri`必须在应用高级设置中授权)
+
+![weibo_auth](http://i1345.photobucket.com/albums/p671/zhangyangyu/weibo_auth_zpsa3c37561.png)
+
+`get_authenticated_user`获取`access_token`,并以字典的形式返回`id`, `screen_name`,`profile_image_url`,
+`access_token`, `session_expires`：
+
+![renren_redirect](http://i1345.photobucket.com/albums/p671/zhangyangyu/weibo_redirect_zps084e7697.png)
+
+`weibo_request`用来调用微博API，应传入 *https://api.weibo.com/2* 后的相对路径，部分API必须用POST方法，除了
+`access_token`外，还必须传入`uid`和`screen_name`中的一个，有且仅有一个，API列表参见相关文档。
+
+相关文档
+-------
+
+[OAuth授权](http://open.weibo.com/wiki/%E6%8E%88%E6%9D%83%E6%9C%BA%E5%88%B6%E8%AF%B4%E6%98%8E)
+
+[API列表](http://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9AAPI)
 
 
 
