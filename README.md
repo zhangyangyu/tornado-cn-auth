@@ -91,6 +91,29 @@ tornado-cn-auth
 
 [API列表](http://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9AAPI)
 
+腾讯
+===
+
+`authorize_redirect`跳转到腾讯授权界面(`redirect_uri`需要在应用中授权)。腾讯在授权时必须传输一个`state`作为状态跟踪标记，
+可以为空，默认也为空。
+
+![qq_auth](http://i1345.photobucket.com/albums/p671/zhangyangyu/qq_auth_zpsf68b4bef.png)
+
+`get_authenticated_user`获取`access_token`和`openid`，若想调用腾讯API，则必须先通过`access_token`获取`openid`。
+该方法以字典形式返回`openid`, `figureurl`, `nickname`, `access_token`, `session_expires`：
+
+![qq_redirect](http://i1345.photobucket.com/albums/p671/zhangyangyu/qq_redirect_zps5b94793e.png)
+
+`qq_request`用来调用腾讯API， 应传入 *https://graph.qq.com* 后的相对路径。需要的参数有`access_token`, `openid`,
+`client_id`。
+
+相关文档
+-------
+
+[OAuth授权](http://wiki.open.qq.com/wiki/website/%E4%BD%BF%E7%94%A8Authorization_Code%E8%8E%B7%E5%8F%96Access_Token)
+
+[API列表](http://wiki.open.qq.com/wiki/website/API%E5%88%97%E8%A1%A8)
+
 
 
 
