@@ -22,8 +22,7 @@ tornado-cn-auth
 *   [豆瓣](https://github.com/zhangyangyu/tornado-cn-auth#-10)
 *   [新浪微博](https://github.com/zhangyangyu/tornado-cn-auth#-6)
 *   [百度](https://github.com/zhangyangyu/tornado-cn-auth#-2)
-*   开心网
-*   360安全卫士
+*   [开心网](https://github.com/zhangyangyu/tornado-cn-auth#-12)
 
 百度
 ===
