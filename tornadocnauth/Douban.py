@@ -91,7 +91,7 @@ class DoubanMixin(OAuth2Mixin):
         for field in fields:
             fieldmap[field] = user.get(field)
 
-        fieldmap.update({'access_token': session['access_token'], 'session_expires': session['expires'])
+        fieldmap.update({'access_token': session['access_token'], 'session_expires': session['expires']})
 
         future.set_result(fieldmap)
 
