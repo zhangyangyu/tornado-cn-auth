@@ -17,14 +17,13 @@ tornado-cn-auth
 支持网站
 =======
 
-*   人人
-*   腾讯
-*   豆瓣
-*   新浪微博
-*   网易微博
-*   搜狐微博
-*   百度
+*   [人人](https://github.com/zhangyangyu/tornado-cn-auth#-4)
+*   [腾讯](https://github.com/zhangyangyu/tornado-cn-auth#-8)
+*   [豆瓣](https://github.com/zhangyangyu/tornado-cn-auth#-10)
+*   [新浪微博](https://github.com/zhangyangyu/tornado-cn-auth#-6)
+*   [百度](https://github.com/zhangyangyu/tornado-cn-auth#-2)
 *   开心网
+*   360安全卫士
 
 百度
 ===
