@@ -1,7 +1,7 @@
 tornado-cn-auth
 ===============
 
-提供中国主流网站的tornado OAuth扩展(待完成)
+提供中国主流网站的tornado OAuth扩展
 
 介绍
 ===
@@ -132,6 +132,27 @@ OAuth认证也可以使用，部分API需要授权，添加`access_token`的Head
 [OAuth授权](http://developers.douban.com/wiki/?title=oauth2#server_side_flow)
 
 [API列表](http://developers.douban.com/wiki/?title=api_v2)
+
+开心网
+=====
+
+`authorize_redirect`跳转到开心授权界面(`redirect_uri`不要被授权)
+
+![kaixin_auth](http://i1345.photobucket.com/albums/p671/zhangyangyu/kaixin_auth_zpsfbeec889.png)
+
+`get_authenticated_user`获取`access_token`，以字典形式返回`access_token`, `seesion_expires`, `uid`,
+`name`, `logo50`。
+
+![kaixin_redirect](http://i1345.photobucket.com/albums/p671/zhangyangyu/kaixin_redirect_zps7a0bb94b.png)
+
+`kaixin_request`用来调用开心API，应传入 *https://api.kaixin001.com* 之后的相对路径。
+
+相关文档
+-------
+
+[OAuth授权](http://wiki.open.kaixin001.com/index.php?id=%E4%BD%BF%E7%94%A8Authorization_Code%E8%8E%B7%E5%8F%96Access_Token)
+
+[API列表](http://wiki.open.kaixin001.com/index.php?id=API%E6%96%87%E6%A1%A3)
 
 
 
