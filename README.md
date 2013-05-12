@@ -14,6 +14,11 @@ tornado-cn-auth
 
 相关模块内容可参见[tornado.auth文档](http://www.tornadoweb.org/en/stable/auth.html)
 
+安装
+===
+
+`pip install tornadocnauth`
+
 支持网站
 =======
 
