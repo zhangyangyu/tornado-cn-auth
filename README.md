@@ -21,6 +21,8 @@ tornado-cn-auth
 pip install tornadocnauth
 ```
 
+必须先安装[tornado](https://github.com/facebook/tornado)
+
 支持网站
 =======
 
