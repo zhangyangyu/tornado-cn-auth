@@ -17,7 +17,11 @@ tornado-cn-auth
 安装
 ===
 
-`pip install tornadocnauth`
+```bash
+
+pip install tornadocnauth
+
+```
 
 支持网站
 =======
