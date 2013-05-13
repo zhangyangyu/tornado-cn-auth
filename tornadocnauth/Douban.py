@@ -46,7 +46,7 @@ class DoubanMixin(OAuth2Mixin):
             'grant_type': grant_type,
             }
 
-        fields = set(['id', 'uid', 'name', 'avatar'])
+        fields = set(['id', 'name', 'avatar'])
 
         if extra_fields:
             fields.update(extra_fields)
@@ -91,7 +91,8 @@ class DoubanMixin(OAuth2Mixin):
         for field in fields:
             fieldmap[field] = user.get(field)
 
-        fieldmap.update({'access_token': session['access_token'], 'session_expires': session['expires']})
+        fieldmap.update({'access_token': session['access_token'], 'session_expires': session['expires'], 
+                         'douban_user_id': session['douban_user_id']})
 
         future.set_result(fieldmap)
 
@@ -99,6 +100,8 @@ class DoubanMixin(OAuth2Mixin):
     def douban_request(self, path, callback, access_token=None, post_args=None, **args):
         url = "https://api.douban.com/v2" + path
         all_args = {}
+        if access_token:
+            self.add_header('access_token', access_token)
         if args:
             all_args.update(args)
 
@@ -106,15 +109,17 @@ class DoubanMixin(OAuth2Mixin):
         http = self.get_auth_http_client()
         
         if post_args is not None:
-            request = httpclient.HTTPRequest(url, method="POST", headers=dict(access_token=access_token), body=urllib_parse.urlencode(post_args))
+            request = httpclient.HTTPRequest(url, method='POST', headers=dict(access_token=access_token),
+                                             body=urllib_parse.urlencode(post_args))
         elif all_args:
-            url += "?" + urllib_parse.urlencode(all_args)
+            url += '?' + urllib_parse.urlencode(all_args)
             request = httpclient.HTTPRequest(url, headers=dict(access_token=access_token))
         else:
             request = httpclient.HTTPRequest(url, headers=dict(access_token=access_token))
-
-        http.fetch(request, callback=callback)
             
+        print(str(request.headers))
+        http.fetch(request, callback=callback)
+
     def _on_douban_request(self, future, response):
         if response.error:
             future.set_exception(AuthError('Error response % fetching %s',

@@ -83,7 +83,7 @@ class RenRenMixin(OAuth2Mixin):
             'access_token': args['access_token'],
             'expires': args.get('expires_in'),
             'refresh_token': args.get('refresh_token'),
-            'scope': args['scope'],
+            'scope': args.get('scope'),
             }
 
         self.renren_request(

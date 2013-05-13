@@ -75,7 +75,7 @@ class QQMixin(OAuth2Mixin):
         return url_concat(url, args)
 
     def _on_access_token(self, redirect_uri, client_id, client_secret,
-                         future, fields, response):
+                         callback, fields, response):
         if response.error:
             future.set_exception(AuthError('QQ auth error %s' % str(response)))
             return
@@ -89,7 +89,7 @@ class QQMixin(OAuth2Mixin):
         http = self.get_auth_http_client()
         http.fetch(url_concat('https://graph.qq.com/oauth2.0/me?', {'access_token': session['access_token']}), 
                    self.async_callback(self._on_access_openid, redirect_uri, client_id,
-                                       client_secret, session, future, fields))
+                                       client_secret, session, callback, fields))
 
     def _on_access_openid(self, redirect_uri, client_id, client_secret, session,
                           future, fields, response):
@@ -123,6 +123,8 @@ class QQMixin(OAuth2Mixin):
 
         fieldmap.update({'access_token': session['access_token'], 'session_expires': session.get('expires'), 
                          'openid': session['openid']})
+
+        print(fieldmap)
 
         future.set_result(fieldmap)
 

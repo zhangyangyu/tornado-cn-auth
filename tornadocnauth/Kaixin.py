@@ -31,7 +31,8 @@ class KaixinMixin(OAuth2Mixin):
 
         if extra_params:
             args.update(extra_params)
-            
+        
+        print(url_concat(self._OAUTH_AUTHORIZE_URL, args))
         self.redirect(url_concat(self._OAUTH_AUTHORIZE_URL, args))
 
     @_auth_return_future
@@ -98,6 +99,7 @@ class KaixinMixin(OAuth2Mixin):
             future.set_result(None)
             return
 
+        print(user)
         fieldmap = {}
         for field in fields:
             fieldmap[field] = user.get(field)
