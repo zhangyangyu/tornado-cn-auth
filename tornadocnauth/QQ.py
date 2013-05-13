@@ -124,8 +124,6 @@ class QQMixin(OAuth2Mixin):
         fieldmap.update({'access_token': session['access_token'], 'session_expires': session.get('expires'), 
                          'openid': session['openid']})
 
-        print(fieldmap)
-
         future.set_result(fieldmap)
 
     @_auth_return_future
