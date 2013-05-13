@@ -100,8 +100,6 @@ class DoubanMixin(OAuth2Mixin):
     def douban_request(self, path, callback, access_token=None, post_args=None, **args):
         url = "https://api.douban.com/v2" + path
         all_args = {}
-        if access_token:
-            self.add_header('access_token', access_token)
         if args:
             all_args.update(args)
 
@@ -109,15 +107,13 @@ class DoubanMixin(OAuth2Mixin):
         http = self.get_auth_http_client()
         
         if post_args is not None:
-            request = httpclient.HTTPRequest(url, method='POST', headers=dict(access_token=access_token),
-                                             body=urllib_parse.urlencode(post_args))
+            request = httpclient.HTTPRequest(url, method='POST', headers={'Authorization':'Bearer %s' % access_token}, body=urllib_parse.urlencode(post_args))
         elif all_args:
             url += '?' + urllib_parse.urlencode(all_args)
-            request = httpclient.HTTPRequest(url, headers=dict(access_token=access_token))
+            request = httpclient.HTTPRequest(url, headers={'Authorization':'Bearer %s' % access_token})
         else:
-            request = httpclient.HTTPRequest(url, headers=dict(access_token=access_token))
-            
-        print(str(request.headers))
+            request = httpclient.HTTPRequest(url, headers={'Authorization':'Bearer %s' % access_token})
+
         http.fetch(request, callback=callback)
 
     def _on_douban_request(self, future, response):

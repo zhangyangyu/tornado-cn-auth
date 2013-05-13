@@ -129,7 +129,9 @@ pip install tornadocnauth
 ![douban_auth](http://i1345.photobucket.com/albums/p671/zhangyangyu/douban_auth_zps6490de1b.png)
 
 `get_authenticated_user`获取`access_token`，以字典的形式返回`access_token`, `session_expires`, `id`, `uid`,
-`name`, `avatar`。（API审核暂未通过）
+`name`, `avatar`。
+
+![douban_redirect](http://i1345.photobucket.com/albums/p671/zhangyangyu/douban_redirect_zpsc95c2ee6.png)
 
 `douban_request`用来调用豆瓣API，应传入 *https://api.douban.com/v2* 之后的相对路径。部分豆瓣API不用进行
 OAuth认证也可以使用，部分API需要授权，添加`access_token`的Header，并需要在应用设置中选择相应API权限提交审核，
