@@ -3,6 +3,8 @@ tornado-cn-auth
 
 提供中国主流网站的tornado OAuth扩展
 
+OUTDATED.请不要再使用.Sorry.
+
 介绍
 ===
 
